@@ -1,9 +1,19 @@
 import React from 'react';
-// import { nanoid } from 'nanoid';
-import PropTypes from 'prop-types';
+// import PropTypes from 'prop-types';
 import css from './Filter.module.css';
+import { useDispatch } from 'react-redux';
+import { addFilter } from 'redux/filterSlice';
 
-export const Filter = ({ filter, onChangeFilter }) => {
+export const Filter = () => {
+  
+  const dispatch = useDispatch();
+
+  const handleChangeFilter = event => {
+    event.preventDefault();
+    const value = event.currentTarget.value;
+    dispatch(addFilter(value))
+  }
+
   return (
     <>
       <label className={css.filter__label}>
@@ -11,15 +21,11 @@ export const Filter = ({ filter, onChangeFilter }) => {
         <input
           className={css.filter__input}
           type="text"
-          value={filter}
-          onChange={onChangeFilter}
+          onChange={handleChangeFilter}
         />
       </label>
     </>
   );
 };
 
-Filter.prototype = {
-  filter: PropTypes.string,
-  onChangeFilter: PropTypes.func,
-};
+
