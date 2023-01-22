@@ -5,17 +5,19 @@ const contactSlice = createSlice({
     name: 'contacts',
     initialState: {
         contacts: [
-            // {
-            //     id: nanoid(),
-            //     name: '',
-            //     number: ''
-            // }
+            {
+                id: '',
+                name: '',
+                number: ''
+            }
         ],
     },
     reducers: {
         addContact (state, action) {
             console.log(action.payload)
-            state.contacts.push(action.payload)},
+                            state.contacts.push(action.payload)
+        
+            },
     //     addContact: {
     //         reduser (state, action) {
     //         console.log(action.payload)
