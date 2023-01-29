@@ -8,10 +8,11 @@ import { getContacts, getFilter } from 'redux/selectors';
 export const ContactList = () => {
   const contacts = useSelector(getContacts); 
    const filter = useSelector(getFilter)
- 
+
   const visibleContacts = contacts.filter(contact =>
     contact.name.toLowerCase().includes(filter.toLowerCase())
   );
+
   return (
     <>
       <ul className={css.contact__list}>

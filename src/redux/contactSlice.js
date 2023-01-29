@@ -5,11 +5,11 @@ const contactSlice = createSlice({
     name: 'contacts',
     initialState: {
         contacts: [
-            {
-                id: '',
-                name: '',
-                number: ''
-            }
+            // {
+            //     id: '',
+            //     name: '',
+            //     number: '',
+            // }
         ],
     },
     reducers: {
